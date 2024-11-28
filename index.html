@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <title>Perturb-and-Revise: Flexible 3D Editing with Generative Trajectories</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+        }
+
+        body {
+            line-height: 1.6;
+            color: #333;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            text-align: center;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding: 20px 0;
+            border-bottom: 2px solid #eee;
+        }
+
+        h1 {
+            font-size: 2.4rem;
+            margin-bottom: 30px;
+            color: #2c3e50;
+            line-height: 1.3;
+        }
+
+        h2 {
+            font-size: 1.8rem;
+            margin: 40px 0 20px;
+            color: #2c3e50;
+        }
+
+        .authors {
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .author {
+            color: #2c3e50;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .author:hover {
+            color: #3498db;
+        }
+
+        .affiliations {
+            color: #666;
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .buttons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 25px;
+        }
+
+        .button {
+            display: inline-flex;
+            align-items: center;
+            padding: 8px 20px;
+            background: #333333;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background 0.3s;
+            font-weight: 500;
+        }
+
+        .button:hover {
+            background: #2980b9;
+        }
+
+        .gif-section {
+            margin: 40px 0;
+        }
+
+        .gif-row {
+            display: grid;
+        }
+
+        .gif-box {
+            background: #f8f9fa;
+            padding-left: 15%;
+            padding-right: 15%;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .gif-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 4px;
+        }
+
+        .gif-caption {
+            margin-top: 10px;
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        .tldr {
+            max-width: 100%;
+            margin: 0 auto 40px auto;
+            padding: 25px;
+            background: #f8f9fa;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .tldr h2 {
+            border: none;
+            margin-bottom: 15px;
+        }
+
+        .figure-section img {
+            width: 60%;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+
+        .analysis-section {
+            background: #f8f9fa;
+            padding: 25px;
+            border-radius: 8px;
+            margin: 40px 0;
+        }
+
+        .gallery-section {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 40px 0;
+        }
+
+        .gallery-item {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 4px;
+        }
+
+        @media (max-width: 768px) {
+            .gif-row {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Perturb-and-Revise: Flexible 3D Editing with Generative Trajectories</h1>
+        
+        <div class="authors">
+            <a href="https://susunghong.github.io/" class="author">Susung Hong<sup>1</sup></a>
+            <a href="https://johannakarras.github.io/" class="author">Johanna Karras<sup>1</sup></a>
+            <a href="https://ricardomartinbrualla.com/" class="author">Ricardo Martin-Brualla<sup>2</sup></a>
+            <a href="https://www.irakemelmacher.com/" class="author">Ira Kemelmacher-Shlizerman<sup>1</sup></a>
+        </div>
+
+        <div class="affiliations">
+            <div><sup>1</sup>University of Washington</div>
+            <div><sup>2</sup>Google Research</div>
+        </div>
+
+        <div class="buttons">
+            <a href="https://arxiv.org/" class="button"><i class="fa-solid fa-file-pdf"></i>&ensp;Paper</a>
+            <a href="https://github.com/susunghong/perturb-and-revise" class="button"><i class="fa-brands fa-github"></i>&ensp;Code (coming soon)</a>
+        </div>
+    </header>
+
+    <section class="gif-section">
+        <div class="gif-row">
+            <div class="gif-box">
+                <img src="assets/split_gifs/comp_part18.gif" alt="">
+            </div>
+            <div class="gif-box">
+                <img src="assets/split_gifs/comp_part14.gif" alt="">
+            </div>
+            <div class="gif-box">
+                <img src="assets/split_gifs/comp_part13.gif" alt="">
+            </div>
+        </div>
+    </section>
+
+    <div class="tldr">
+        <h2>TL;DR</h2>
+        <p>Existing 3D editing methods struggle with extensive geometric or appearance changes. We propose <b>Perturb-and-Revise</b>, which makes possible a variety of NeRF editing.</p>
+    </div>
+
+
+    <section class="figure-section">
+        <h2>Method Overview</h2>
+        <img src="assets/figures/overview.png" alt="Method figure">
+        <p>Perturb-and-Revise takes a source NeRF and an edit prompt as input and produces the edited result through: (1) versatile initialization via parameter perturbation, (2) multi-view consistent score distillation, and (3) refinement with the identity-preserving gradient.</p>
+    </section>
+
+    <section class="figure-section">
+        <h2>Parameter Perturbation</h2>
+        <img src="assets/figures/parameter_perturbation.png" alt="Method figure">
+        <p>Effect of parameter perturbation. In this example, we aim to make a NeRF model of a standing person sit down using just the word “sitting.” The scene converges quickly even with large perturbations (η = 0.6), while complete regeneration yields blurry rendering results given the same number of optimization steps.</p>
+    </section>
+
+    <section class="figure-section">
+        <h2>Real Scene Editing</h2>
+        <img src="assets/figures/scene_editing.png" alt="Method figure">
+        <p>Real scene editing results. An asterisk (*) denotes the reduced optimization schedule used to improve computational efficiency. We used identical steps for both posterior distillation sampling and our method.</p>
+    </section>
+
+    <section class="gif-section">
+        <h2>Objaverse Object Editing</h2>
+        <div class="gif-row">
+            <div class="gif-box">
+                <img src="assets/split_gifs/comp_part01.gif" alt="">
+            </div>
+            <div class="gif-box">
+                <img src="assets/split_gifs/comp_part02.gif" alt="">
+            </div>
+            <div class="gif-box">
+                <img src="assets/split_gifs/comp_part03.gif" alt="">
+            </div>
+            <div class="gif-box">
+                <img src="assets/split_gifs/comp_part04.gif" alt="">
+            </div>
+            <div class="gif-box">
+                <img src="assets/split_gifs/comp_part05.gif" alt="">
+            </div>
+            <div class="gif-box">
+                <img src="assets/split_gifs/comp_part08.gif" alt="">
+            </div>
+        </div>
+    </section>
+
+
+    <section class="gif-section">
+        <h2>Fashion Object Editing</h2>
+        <div class="gif-row">
+            <div class="gif-box">
+                <img src="assets/split_gifs/comp_part12.gif" alt="">
+            </div>
+            <div class="gif-box">
+                <img src="assets/split_gifs/comp_part15.gif" alt="">
+            </div>
+            <div class="gif-box">
+                <img src="assets/split_gifs/comp_part16.gif" alt="">
+            </div>
+            <div class="gif-box">
+                <img src="assets/split_gifs/comp_part17.gif" alt="">
+            </div>
+            <div class="gif-box">
+                <img src="assets/split_gifs/comp_part19.gif" alt="">
+            </div>
+            <div class="gif-box">
+                <img src="assets/split_gifs/comp_part20.gif" alt="">
+            </div>
+        </div>
+    </section>
+
+</body>
+</html>
