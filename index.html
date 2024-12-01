@@ -121,6 +121,20 @@
             color: #666;
         }
 
+        .abstract {
+            max-width: 100%;
+            margin: 0 auto 40px auto;
+            padding: 25px;
+            background: #f8f9fa;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .abstract h2 {
+            border: none;
+            margin-bottom: 15px;
+        }
+
         .tldr {
             max-width: 100%;
             margin: 0 auto 40px auto;
@@ -136,7 +150,7 @@
         }
 
         .figure-section img {
-            width: 60%;
+            width: 55%;
             border-radius: 8px;
             margin: 20px 0;
         }
@@ -173,6 +187,42 @@
             .gif-row {
                 grid-template-columns: 1fr;
             }
+        }
+
+        .citation-section {
+            max-width: 100%;
+            margin: 40px 0;
+            padding: 25px;
+            background: #f8f9fa;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .bibtex {
+            background: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            overflow-x: auto;
+            font-family: monospace;
+            font-size: 0.9rem;
+            line-height: 1.4;
+            margin: 15px 0;
+            border: 1px solid #eee;
+            white-space: pre-wrap;
+            text-align: left;
+        }
+
+        .acknowledgments {
+            max-width: 100%;
+            margin: 40px 0;
+            padding: 25px;
+            background: #f8f9fa;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .acknowledgments p {
+            margin-top: 15px;
         }
     </style>
 </head>
@@ -217,6 +267,10 @@
         <p>Existing 3D editing methods struggle with extensive geometric or appearance changes. We propose <b>Perturb-and-Revise</b>, which makes possible a variety of NeRF editing.</p>
     </div>
 
+    <div class="abstract">
+        <h2>Abstract</h2>
+        <p>The fields of 3D reconstruction and text-based 3D editing have advanced significantly with the evolution of text-based diffusion models. While existing 3D editing methods excel at modifying color, texture, and style, they struggle with extensive geometric or appearance changes, thus limiting their applications. We propose Perturb-and-Revise, which makes possible a variety of NeRF editing. First, we perturb the NeRF parameters with random initializations to create a versatile initialization. We automatically determine the perturbation magnitude through analysis of the local loss landscape. Then, we revise the edited NeRF via generative trajectories. Combined with the generative process, we impose identity-preserving gradients to refine the edited NeRF. Extensive experiments demonstrate that Perturb-and-Revise facilitates flexible, effective, and consistent editing of color, appearance, and geometry in 3D without model retraining.</p>
+    </div>
 
     <section class="figure-section">
         <h2>Method Overview</h2>
@@ -228,12 +282,6 @@
         <h2>Parameter Perturbation</h2>
         <img src="assets/figures/parameter_perturbation.png" alt="Method figure">
         <p>Effect of parameter perturbation. In this example, we aim to make a NeRF model of a standing person sit down using just the word “sitting.” The scene converges quickly even with large perturbations (η = 0.6), while complete regeneration yields blurry rendering results given the same number of optimization steps.</p>
-    </section>
-
-    <section class="figure-section">
-        <h2>Real Scene Editing</h2>
-        <img src="assets/figures/scene_editing.png" alt="Method figure">
-        <p>Real scene editing results. An asterisk (*) denotes the reduced optimization schedule used to improve computational efficiency. We used identical steps for both posterior distillation sampling and our method.</p>
     </section>
 
     <section class="gif-section">
@@ -284,6 +332,29 @@
             </div>
         </div>
     </section>
+
+    <section class="figure-section">
+        <h2>Real Scene Editing</h2>
+        <img src="assets/figures/scene_editing.png" alt="Method figure">
+    </section>
+
+    <section class="citation-section">
+        <h2>Citation</h2>
+        <pre class="bibtex">
+@inproceedings{hong2024perturb,
+    title={Perturb-and-Revise: Flexible {3D} Editing with Generative Trajectories},
+    author={Hong, Susung and Karras, Johanna and Martin-Brualla, Ricardo and Kemelmacher-Shlizerman, Ira},
+    booktitle={arXiv},
+    year={2024}
+}
+        </pre>
+    </section>
+
+    <section class="acknowledgments">
+        <h2>Acknowledgments</h2>
+        <p>We thank the anonymous reviewers for their valuable feedback. This work was supported in part by NSF Grant No. 2240719 and a grant from the University of Washington AI Institute. The views and conclusions contained herein are those of the authors and should not be interpreted as necessarily representing the official policies, either expressed or implied, of NSF or the U.S. Government.</p>
+    </section>
+
 
 </body>
 </html>
