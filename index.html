@@ -16,26 +16,41 @@
         body {
             line-height: 1.6;
             color: #333;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
+            padding: 0;
+            margin: 0;
             text-align: center;
+            background: #f8f9fa;
         }
 
         .main-container {
+            width: 100%;
+            min-height: 100vh;
             background: #f8f9fa;
-            border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-            overflow: hidden;
-            padding-bottom: 30px;
+            padding-bottom: 50px;
         }
 
         header {
             text-align: center;
-            margin-bottom: 30px;
-            padding: 30px 20px;
+            padding: 40px 20px;
             background: linear-gradient(to right, #2c3e50, #4a6b8a);
             color: white;
+            margin-bottom: 40px;
+        }
+        
+        .abstract {
+            max-width: 1000px;
+            margin: 0 auto 40px auto;
+            padding: 25px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .abstract p {
+            text-align: left;
+            color: #444;
+            line-height: 1.7;
         }
 
         h1 {
@@ -107,13 +122,14 @@
         }
 
         .gif-section {
-            margin: 40px 20px;
+            margin: 40px auto;
+            max-width: 1000px;
         }
 
         .gif-row {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
+            grid-template-columns: 1fr;
+            gap: 30px;
             margin-top: 20px;
         }
 
@@ -123,6 +139,8 @@
             box-shadow: 0 2px 4px rgba(0,0,0,0.1);
             overflow: hidden;
             transition: transform 0.3s;
+            max-width: 800px;
+            margin: 0 auto;
         }
 
         .gif-box:hover {
@@ -136,11 +154,12 @@
         }
 
         .figure-section {
-            margin: 40px 20px;
+            margin: 40px auto;
+            max-width: 1000px;
         }
 
         .figure-section img {
-            width: 55%;
+            width: 70%;
             border-radius: 8px;
             margin: 20px auto;
             display: block;
@@ -154,7 +173,7 @@
         }
 
         .section-divider {
-            margin: 40px auto;
+            margin: 50px auto;
             height: 2px;
             background: linear-gradient(to right, transparent, #3498db, transparent);
             width: 80%;
@@ -177,9 +196,6 @@
         }
 
         @media (max-width: 768px) {
-            .gif-row {
-                grid-template-columns: 1fr;
-            }
             .figure-section img {
                 width: 90%;
             }
@@ -209,15 +225,24 @@
             </div>
         </header>
 
+        <div class="abstract">
+            <h2>Abstract</h2>
+            <p>The fields of 3D reconstruction and text-based 3D editing have advanced significantly with the evolution of text-based diffusion models. While existing 3D editing methods excel at modifying color, texture, and style, they struggle with extensive geometric or appearance changes, thus limiting their applications. We propose Perturb-and-Revise, which makes possible a variety of NeRF editing. First, we perturb the NeRF parameters with random initializations to create a versatile initialization. We automatically determine the perturbation magnitude through analysis of the local loss landscape. Then, we revise the edited NeRF via generative trajectories. Combined with the generative process, we impose identity-preserving gradients to refine the edited NeRF. Extensive experiments demonstrate that Perturb-and-Revise facilitates flexible, effective, and consistent editing of color, appearance, and geometry in 3D without model retraining.</p>
+        </div>
+
         <section class="gif-section">
             <h2>3D Object Editing</h2>
             <div class="gif-row">
                 <div class="gif-box">
                     <img src="assets/split_gifs/comp_part18.gif" alt="3D Object Editing Example 1">
                 </div>
+            </div>
+            <div class="gif-row">
                 <div class="gif-box">
                     <img src="assets/split_gifs/comp_part14.gif" alt="3D Object Editing Example 2">
                 </div>
+            </div>
+            <div class="gif-row">
                 <div class="gif-box">
                     <img src="assets/split_gifs/comp_part13.gif" alt="3D Object Editing Example 3">
                 </div>
@@ -253,18 +278,28 @@
                 <div class="gif-box">
                     <img src="assets/split_gifs/comp_part01.gif" alt="Objaverse Editing 1">
                 </div>
+            </div>
+            <div class="gif-row">
                 <div class="gif-box">
                     <img src="assets/split_gifs/comp_part02.gif" alt="Objaverse Editing 2">
                 </div>
+            </div>
+            <div class="gif-row">
                 <div class="gif-box">
                     <img src="assets/split_gifs/comp_part03.gif" alt="Objaverse Editing 3">
                 </div>
+            </div>
+            <div class="gif-row">
                 <div class="gif-box">
                     <img src="assets/split_gifs/comp_part04.gif" alt="Objaverse Editing 4">
                 </div>
+            </div>
+            <div class="gif-row">
                 <div class="gif-box">
                     <img src="assets/split_gifs/comp_part05.gif" alt="Objaverse Editing 5">
                 </div>
+            </div>
+            <div class="gif-row">
                 <div class="gif-box">
                     <img src="assets/split_gifs/comp_part08.gif" alt="Objaverse Editing 6">
                 </div>
@@ -279,18 +314,28 @@
                 <div class="gif-box">
                     <img src="assets/split_gifs/comp_part12.gif" alt="Fashion Editing 1">
                 </div>
+            </div>
+            <div class="gif-row">
                 <div class="gif-box">
                     <img src="assets/split_gifs/comp_part15.gif" alt="Fashion Editing 2">
                 </div>
+            </div>
+            <div class="gif-row">
                 <div class="gif-box">
                     <img src="assets/split_gifs/comp_part16.gif" alt="Fashion Editing 3">
                 </div>
+            </div>
+            <div class="gif-row">
                 <div class="gif-box">
                     <img src="assets/split_gifs/comp_part17.gif" alt="Fashion Editing 4">
                 </div>
+            </div>
+            <div class="gif-row">
                 <div class="gif-box">
                     <img src="assets/split_gifs/comp_part19.gif" alt="Fashion Editing 5">
                 </div>
+            </div>
+            <div class="gif-row">
                 <div class="gif-box">
                     <img src="assets/split_gifs/comp_part20.gif" alt="Fashion Editing 6">
                 </div>
