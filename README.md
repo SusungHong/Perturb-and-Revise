@@ -29,9 +29,7 @@ Run the test script:
 bash test_pnr.sh
 ```
 
-### Custom Parameters
-
-#### Generate a synthetic object
+### Generate a Synthetic Object
 ```bash
 python launch.py --config configs/mvdream-sd21-shading-schedule.yaml --train --gpu 0 \
     system.prompt_processor.prompt="$ORIG_PROMPT" \
@@ -39,7 +37,7 @@ python launch.py --config configs/mvdream-sd21-shading-schedule.yaml --train --g
     tag="$ORIG_PROMPT" use_timestamp=false name="synthetic"
 ```
 
-#### Edit an existing object
+### Edit an Existing Object
 Choose the appropriate config:
 - `mvdream-pnr.yaml`: For general objects
 - `mvdream-pnr-synthetic.yaml`: For synthetic objects (includes a resolution milestone)
@@ -52,7 +50,7 @@ python launch.py --config configs/mvdream-pnr.yaml --train --gpu 0 \
     tag="$EDIT_PROMPT" use_timestamp=false name="pnr"
 ```
 
-#### Apply IPG refinement
+### IPG Steps
 ```bash
 python launch.py --config configs/mvdream-pnr-ipg.yaml --train --gpu 0 \
     system.prompt_processor.prompt="$EDIT_PROMPT" \
@@ -62,7 +60,7 @@ python launch.py --config configs/mvdream-pnr-ipg.yaml --train --gpu 0 \
     tag="$EDIT_PROMPT" use_timestamp=false name="pnr_ipg"
 ```
 
-## More Parameters to Consider
+### More Parameters to Consider
 
 - **`trainer.max_steps` and other step-related parameters** 
   - For first-stage editing without IPG, add 50 steps to your desired count
@@ -83,3 +81,11 @@ python launch.py --config configs/mvdream-pnr-ipg.yaml --train --gpu 0 \
   year={2024}
 }
 ```
+
+## Acknowledgements
+
+This code builds upon the following repositories:
+- [threestudio](https://github.com/threestudio-project/threestudio)
+- [MVDream-threestudio](https://github.com/bytedance/MVDream-threestudio)
+
+We thank the authors for their open-source contributions that made this work possible.
