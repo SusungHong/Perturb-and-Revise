@@ -58,7 +58,7 @@ python launch.py --config configs/mvdream-pnr-ipg.yaml --train --gpu 0 \
 - **`trainer.max_steps` and other step-related parameters** 
   - For first-stage editing without IPG, add 50 steps to your desired count
   - This accounts for the 50 steps used to determine the perturbation value
-  - Also applicable to parameters like `resolution_milestones` and `min_step_percent`
+  - Also applies to parameters like `resolution_milestones`, `min_step_percent`, and `max_step_percent`
 
 - **`system.auto_eta_upper_bound`**
   - Controls the upper limit for perturbation value (Default: 0.6)
