@@ -1,8 +1,6 @@
-# Perturb-and-Revise: Flexible 3D Editing with Generative Trajectories
+# [CVPR 2025] Perturb-and-Revise: Flexible 3D Editing with Generative Trajectories
 
 Susung Hong, Johanna Karras, Ricardo Martin-Brualla, and Ira Kemelmacher-Shlizerman
-
-CVPR 2025
 
 [![Project Page](https://img.shields.io/badge/Project-Page-blue)](https://susunghong.github.io/Perturb-and-Revise/)
 [![Paper](https://img.shields.io/badge/Paper-arXiv-red)](https://arxiv.org/abs/2412.05279)
