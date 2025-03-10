@@ -7,13 +7,8 @@ Susung Hong, Johanna Karras, Ricardo Martin-Brualla, and Ira Kemelmacher-Shlizer
 
 ## Installation
 
-This code builds upon the following repositories:
-- [threestudio](https://github.com/threestudio-project/threestudio)
-- [MVDream-threestudio](https://github.com/bytedance/MVDream-threestudio)
-
-### Requirements
-- Follow the installation instructions for [threestudio](https://github.com/threestudio-project/threestudio) and [MVDream](https://github.com/bytedance/MVDream-threestudio)
-- Tested with:
+- Follow the installation instructions for [MVDream-threestudio](https://github.com/bytedance/MVDream-threestudio)
+- We have tested with:
   - PyTorch 2.0.1+cu[version]
   - torchvision 0.15.2+cu[version]
   - Python 3.9
