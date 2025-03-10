@@ -49,7 +49,6 @@
             font-size: 1.8rem;
             margin: 30px 0 20px;
             color: #2c3e50;
-            border-bottom: 2px solid #eee;
             padding-bottom: 10px;
             max-width: 80%;
             margin-left: auto;
@@ -107,51 +106,83 @@
             background: rgba(255, 255, 255, 0.25);
         }
 
-        .gif-grid {
+        .gif-section {
+            margin: 40px 20px;
+        }
+
+        .gif-row {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 20px;
-            margin: 30px;
+            margin-top: 20px;
         }
 
-        .gif-item {
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        .gif-box {
             background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            overflow: hidden;
             transition: transform 0.3s;
         }
 
-        .gif-item:hover {
+        .gif-box:hover {
             transform: translateY(-5px);
         }
 
-        .gif-item img {
+        .gif-box img {
             width: 100%;
             height: auto;
             display: block;
         }
 
-        .gif-caption {
-            padding: 10px;
-            font-size: 0.9rem;
-            color: #666;
-            background: #f8f9fa;
-        }
-        
-        .section-divider {
-            margin: 40px 0;
-            height: 2px;
-            background: linear-gradient(to right, transparent, #3498db, transparent);
+        .figure-section {
+            margin: 40px 20px;
         }
 
-        .scene-image {
-            width: 80%;
-            max-width: 800px;
+        .figure-section img {
+            width: 55%;
             border-radius: 8px;
             margin: 20px auto;
             display: block;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .figure-section p {
+            max-width: 70%;
+            margin: 0 auto;
+            color: #555;
+        }
+
+        .section-divider {
+            margin: 40px auto;
+            height: 2px;
+            background: linear-gradient(to right, transparent, #3498db, transparent);
+            width: 80%;
+        }
+
+        .bibtex {
+            background: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            overflow-x: auto;
+            font-family: monospace;
+            font-size: 0.9rem;
+            line-height: 1.4;
+            margin: 15px auto;
+            border: 1px solid #eee;
+            white-space: pre-wrap;
+            text-align: left;
+            width: 80%;
+            max-width: 800px;
+        }
+
+        @media (max-width: 768px) {
+            .gif-row {
+                grid-template-columns: 1fr;
+            }
+            .figure-section img {
+                width: 90%;
+            }
         }
     </style>
 </head>
@@ -178,74 +209,112 @@
             </div>
         </header>
 
-        <h2>3D Object Editing</h2>
-        <div class="gif-grid">
-            <div class="gif-item">
-                <img src="/api/placeholder/400/300" alt="3D Object Editing Example 1">
+        <section class="gif-section">
+            <h2>3D Object Editing</h2>
+            <div class="gif-row">
+                <div class="gif-box">
+                    <img src="assets/split_gifs/comp_part18.gif" alt="3D Object Editing Example 1">
+                </div>
+                <div class="gif-box">
+                    <img src="assets/split_gifs/comp_part14.gif" alt="3D Object Editing Example 2">
+                </div>
+                <div class="gif-box">
+                    <img src="assets/split_gifs/comp_part13.gif" alt="3D Object Editing Example 3">
+                </div>
             </div>
-            <div class="gif-item">
-                <img src="/api/placeholder/400/300" alt="3D Object Editing Example 2">
+        </section>
+        
+        <section class="gif-section">
+            <h2>3D Scene Editing (🐻 ➡ 🐻‍❄️)</h2>
+            <div class="gif-box" style="max-width: 800px; margin: 0 auto;">
+                <img src="assets/figures/teaser_bear.png" alt="Bear transformation example">
             </div>
-            <div class="gif-item">
-                <img src="/api/placeholder/400/300" alt="3D Object Editing Example 3">
-            </div>
-        </div>
-
-        <h2>3D Scene Editing (🐻 ➡ 🐻‍❄️)</h2>
-        <img src="/api/placeholder/800/400" alt="Bear transformation example" class="scene-image">
-
-        <div class="section-divider"></div>
-
-        <h2>Objaverse Object Editing</h2>
-        <div class="gif-grid">
-            <div class="gif-item">
-                <img src="/api/placeholder/400/300" alt="Objaverse Editing 1">
-            </div>
-            <div class="gif-item">
-                <img src="/api/placeholder/400/300" alt="Objaverse Editing 2">
-            </div>
-            <div class="gif-item">
-                <img src="/api/placeholder/400/300" alt="Objaverse Editing 3">
-            </div>
-            <div class="gif-item">
-                <img src="/api/placeholder/400/300" alt="Objaverse Editing 4">
-            </div>
-            <div class="gif-item">
-                <img src="/api/placeholder/400/300" alt="Objaverse Editing 5">
-            </div>
-            <div class="gif-item">
-                <img src="/api/placeholder/400/300" alt="Objaverse Editing 6">
-            </div>
-        </div>
+        </section>
 
         <div class="section-divider"></div>
 
-        <h2>Fashion Object Editing</h2>
-        <div class="gif-grid">
-            <div class="gif-item">
-                <img src="/api/placeholder/400/300" alt="Fashion Editing 1">
-            </div>
-            <div class="gif-item">
-                <img src="/api/placeholder/400/300" alt="Fashion Editing 2">
-            </div>
-            <div class="gif-item">
-                <img src="/api/placeholder/400/300" alt="Fashion Editing 3">
-            </div>
-            <div class="gif-item">
-                <img src="/api/placeholder/400/300" alt="Fashion Editing 4">
-            </div>
-            <div class="gif-item">
-                <img src="/api/placeholder/400/300" alt="Fashion Editing 5">
-            </div>
-            <div class="gif-item">
-                <img src="/api/placeholder/400/300" alt="Fashion Editing 6">
-            </div>
-        </div>
+        <section class="figure-section">
+            <h2>Method Overview</h2>
+            <img src="assets/figures/overview.png" alt="Method figure">
+            <p>Perturb-and-Revise takes a source NeRF and an edit prompt as input and produces the edited result through: (1) versatile initialization via parameter perturbation, (2) multi-view consistent score distillation, and (3) refinement with the identity-preserving gradient.</p>
+        </section>
+
+        <section class="figure-section">
+            <h2>Parameter Perturbation</h2>
+            <img src="assets/figures/parameter_perturbation.png" alt="Parameter perturbation figure">
+            <p>Effect of parameter perturbation. In this example, we aim to make a NeRF model of a standing person sit down using just the word "sitting." The scene converges quickly even with large perturbations (η = 0.6), while complete regeneration yields blurry rendering results given the same number of optimization steps.</p>
+        </section>
 
         <div class="section-divider"></div>
 
-        <h2>Real Scene Editing</h2>
-        <img src="/api/placeholder/800/400" alt="Real Scene Editing" class="scene-image">
+        <section class="gif-section">
+            <h2>Objaverse Object Editing</h2>
+            <div class="gif-row">
+                <div class="gif-box">
+                    <img src="assets/split_gifs/comp_part01.gif" alt="Objaverse Editing 1">
+                </div>
+                <div class="gif-box">
+                    <img src="assets/split_gifs/comp_part02.gif" alt="Objaverse Editing 2">
+                </div>
+                <div class="gif-box">
+                    <img src="assets/split_gifs/comp_part03.gif" alt="Objaverse Editing 3">
+                </div>
+                <div class="gif-box">
+                    <img src="assets/split_gifs/comp_part04.gif" alt="Objaverse Editing 4">
+                </div>
+                <div class="gif-box">
+                    <img src="assets/split_gifs/comp_part05.gif" alt="Objaverse Editing 5">
+                </div>
+                <div class="gif-box">
+                    <img src="assets/split_gifs/comp_part08.gif" alt="Objaverse Editing 6">
+                </div>
+            </div>
+        </section>
+
+        <div class="section-divider"></div>
+
+        <section class="gif-section">
+            <h2>Fashion Object Editing</h2>
+            <div class="gif-row">
+                <div class="gif-box">
+                    <img src="assets/split_gifs/comp_part12.gif" alt="Fashion Editing 1">
+                </div>
+                <div class="gif-box">
+                    <img src="assets/split_gifs/comp_part15.gif" alt="Fashion Editing 2">
+                </div>
+                <div class="gif-box">
+                    <img src="assets/split_gifs/comp_part16.gif" alt="Fashion Editing 3">
+                </div>
+                <div class="gif-box">
+                    <img src="assets/split_gifs/comp_part17.gif" alt="Fashion Editing 4">
+                </div>
+                <div class="gif-box">
+                    <img src="assets/split_gifs/comp_part19.gif" alt="Fashion Editing 5">
+                </div>
+                <div class="gif-box">
+                    <img src="assets/split_gifs/comp_part20.gif" alt="Fashion Editing 6">
+                </div>
+            </div>
+        </section>
+
+        <div class="section-divider"></div>
+
+        <section class="figure-section">
+            <h2>Real Scene Editing</h2>
+            <img src="assets/figures/scene_editing.jpg" alt="Real Scene Editing">
+        </section>
+
+        <div class="section-divider"></div>
+
+        <section class="citation-section">
+            <h2>Citation</h2>
+            <pre class="bibtex">@article{hong2024perturb,
+    title={Perturb-and-Revise: Flexible 3D Editing with Generative Trajectories},
+    author={Hong, Susung and Karras, Johanna and Martin-Brualla, Ricardo and Kemelmacher-Shlizerman, Ira},
+    journal={arXiv preprint arXiv:2408.00760},
+    year={2024}
+}</pre>
+        </section>
     </div>
 </body>
 </html>
