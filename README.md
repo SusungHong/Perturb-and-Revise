@@ -5,6 +5,8 @@ Susung Hong, Johanna Karras, Ricardo Martin-Brualla, and Ira Kemelmacher-Shlizer
 [![Project Page](https://img.shields.io/badge/Project-Page-blue)](https://susunghong.github.io/Perturb-and-Revise/)
 [![Paper](https://img.shields.io/badge/Paper-arXiv-red)](https://arxiv.org/abs/2412.05279)
 
+![Perturb-and-Revise Example](https://susunghong.github.io/Perturb-and-Revise/assets/split_gifs/comp_part18.gif)
+
 ## Installation
 
 - Follow the installation instructions for [MVDream-threestudio](https://github.com/bytedance/MVDream-threestudio)
