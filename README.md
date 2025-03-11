@@ -5,9 +5,7 @@ Susung Hong, Johanna Karras, Ricardo Martin-Brualla, and Ira Kemelmacher-Shlizer
 [![Project Page](https://img.shields.io/badge/Project-Page-blue)](https://susunghong.github.io/Perturb-and-Revise/)
 [![Paper](https://img.shields.io/badge/Paper-arXiv-red)](https://arxiv.org/abs/2412.05279)
 
-<p align="center">
-  <img src="https://susunghong.github.io/Perturb-and-Revise/assets/split_gifs/comp_part18.gif" alt="Demonstration" width="600"/>
-</p>
+![Demonstration](https://susunghong.github.io/Perturb-and-Revise/assets/split_gifs/comp_part18.gif)
 
 ## Installation
 
