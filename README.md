@@ -67,11 +67,11 @@ python launch.py --config configs/mvdream-pnr-ipg.yaml --train --gpu 0 \
 ## Citation
 
 ```bibtex
-@article{hong2025musicinfuser,
-  title={MusicInfuser: Making Video Diffusion Listen and Dance},
-  author={Hong, Susung and Kemelmacher-Shlizerman, Ira and Curless, Brian and Seitz, Steven M},
-  journal={arXiv preprint arXiv:2503.14505},
-  year={2025}
+@article{hong2024perturb,
+   title={Perturb-and-Revise: Flexible 3D Editing with Generative Trajectories},
+   author={Hong, Susung and Karras, Johanna and Martin-Brualla, Ricardo and Kemelmacher-Shlizerman, Ira},
+   journal={arXiv preprint arXiv:2412.05279},
+   year={2024}
 }
 ```
 
