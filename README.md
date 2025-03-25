@@ -5,7 +5,7 @@ Susung Hong, Johanna Karras, Ricardo Martin-Brualla, and Ira Kemelmacher-Shlizer
 [![Project Page](https://img.shields.io/badge/Project-Page-blue)](https://susunghong.github.io/Perturb-and-Revise/)
 [![Paper](https://img.shields.io/badge/Paper-arXiv-red)](https://arxiv.org/abs/2412.05279)
 
-## Installation
+## 🧱 Installation
 
 - Follow the installation instructions for [MVDream-threestudio](https://github.com/bytedance/MVDream-threestudio)
 - We have tested with:
@@ -13,7 +13,7 @@ Susung Hong, Johanna Karras, Ricardo Martin-Brualla, and Ira Kemelmacher-Shlizer
   - torchvision 0.15.2+cu[version]
   - Python 3.9
 
-## Usage
+## 🎨 Usage
 
 ### Quick Start
 
@@ -64,7 +64,7 @@ python launch.py --config configs/mvdream-pnr-ipg.yaml --train --gpu 0 \
   - Controls the upper limit for perturbation value (Default: 0.6)
   - For less perturbation, decrease this value
 
-## Citation
+## 📚 Citation
 
 ```bibtex
 @article{hong2024perturb,
@@ -75,7 +75,7 @@ python launch.py --config configs/mvdream-pnr-ipg.yaml --train --gpu 0 \
 }
 ```
 
-## Acknowledgements
+## 🙏 Acknowledgements
 
 This code builds upon the following repositories:
 - [threestudio](https://github.com/threestudio-project/threestudio)
